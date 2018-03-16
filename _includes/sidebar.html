@@ -1,0 +1,37 @@
+<aside id="aside-part">
+    <div class="social-media">
+        <figure class="jianshu-link">
+            <a class="" href=""></a>
+            <figcaption>简书个人主页</figcaption>
+        </figure>
+        
+        <figure class="weixinqc">
+            <img src="{{ site.baseurl}}/images/weixinqc.jpg" alt="">
+            <figcaption>微信公众号：兰心英语</figcaption>
+        </figure>
+    </div>
+    <div class="block">
+        <h3>最新原创文章</h3>
+        <ul class="list-unstyled block-list">
+            {% for post in site.categories.page limit:5 %}
+                <li class="clearfix">
+                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>   
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="block">
+        <h3>最新配音作品</h3>
+        <ul class="list-unstyled block-list2">
+            {% for voice in site.categories.voice limit:5 %}
+                <li class="clearfix">
+                    <a href="{{ voice.url | prepend: voice.baseurl }}">
+                        <img src="{{ site.baseurl}}/images/{{ voice.img }}">
+                        <h4>{{ voice.title }}</h4>
+                    </a> 
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</aside>
